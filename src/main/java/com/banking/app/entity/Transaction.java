@@ -1,0 +1,98 @@
+package com.banking.app.entity;
+
+import jakarta.persistence.*;
+
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "transactions")
+public class Transaction {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int transactionId;
+    private LocalDateTime transactionDate;
+    private Double transactionAmount;
+    private String transactionType;
+    private String userType;
+    private Double initialBalance;
+    private Double finalBalance;
+    private String transactionPerformedBy;
+
+    public Transaction() {
+    }
+
+    public Transaction(int transactionId, LocalDateTime transactionDate, Double transactionAmount, String transactionType, String userType, Double initialBalance, Double finalBalance, String transactionPerformedBy) {
+        this.transactionId = transactionId;
+        this.transactionDate = transactionDate;
+        this.transactionAmount = transactionAmount;
+        this.transactionType = transactionType;
+        this.userType = userType;
+        this.initialBalance = initialBalance;
+        this.finalBalance = finalBalance;
+        this.transactionPerformedBy = transactionPerformedBy;
+    }
+
+    public int getTransactionId() {
+        return transactionId;
+    }
+
+    public void setTransactionId(int transactionId) {
+        this.transactionId = transactionId;
+    }
+
+    public LocalDateTime getTransactionDate() {
+        return transactionDate;
+    }
+
+    public void setTransactionDate(LocalDateTime transactionDate) {
+        this.transactionDate = transactionDate;
+    }
+
+    public Double getTransactionAmount() {
+        return transactionAmount;
+    }
+
+    public void setTransactionAmount(Double transactionAmount) {
+        this.transactionAmount = transactionAmount;
+    }
+
+    public String getTransactionType() {
+        return transactionType;
+    }
+
+    public void setTransactionType(String transactionType) {
+        this.transactionType = transactionType;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
+    }
+
+    public Double getInitialBalance() {
+        return initialBalance;
+    }
+
+    public void setInitialBalance(Double initialBalance) {
+        this.initialBalance = initialBalance;
+    }
+
+    public Double getFinalBalance() {
+        return finalBalance;
+    }
+
+    public void setFinalBalance(Double finalBalance) {
+        this.finalBalance = finalBalance;
+    }
+
+    public String getTransactionPerformedBy() {
+        return transactionPerformedBy;
+    }
+
+    public void setTransactionPerformedBy(String transactionPerformedBy) {
+        this.transactionPerformedBy = transactionPerformedBy;
+    }
+}

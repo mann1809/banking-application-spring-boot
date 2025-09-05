@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: Banking System - Spring Boot Project
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/banking-system
+    username: postgres
+    password: bebubebu
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8082
+
+
