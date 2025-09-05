@@ -21,8 +21,7 @@ public class Transaction {
     public Transaction() {
     }
 
-    public Transaction(int transactionId, LocalDateTime transactionDate, Double transactionAmount, String transactionType, String userType, Double initialBalance, Double finalBalance, String transactionPerformedBy) {
-        this.transactionId = transactionId;
+    public Transaction(LocalDateTime transactionDate, Double transactionAmount, String transactionType, String userType, Double initialBalance, Double finalBalance, String transactionPerformedBy) {
         this.transactionDate = transactionDate;
         this.transactionAmount = transactionAmount;
         this.transactionType = transactionType;
@@ -30,14 +29,6 @@ public class Transaction {
         this.initialBalance = initialBalance;
         this.finalBalance = finalBalance;
         this.transactionPerformedBy = transactionPerformedBy;
-    }
-
-    public int getTransactionId() {
-        return transactionId;
-    }
-
-    public void setTransactionId(int transactionId) {
-        this.transactionId = transactionId;
     }
 
     public LocalDateTime getTransactionDate() {

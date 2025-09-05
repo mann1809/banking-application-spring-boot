@@ -4,13 +4,14 @@ public class SignupRequest {
     private String username;
     private String password;
     private String contactNumber;
-    private String role;
 
-    public SignupRequest(String username, String password, String contactNumber, String role) {
+    public SignupRequest() {
+    }
+
+    public SignupRequest(String username, String password, String contactNumber) {
         this.username = username;
         this.password = password;
         this.contactNumber = contactNumber;
-        this.role = role;
     }
 
     public String getUsername() {
@@ -35,13 +36,5 @@ public class SignupRequest {
 
     public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 }
