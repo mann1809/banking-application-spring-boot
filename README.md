@@ -1,97 +1,88 @@
-# Banking System - Spring Boot Project
+# Banking System - Spring Boot
 
-A comprehensive banking system built with Spring Boot, featuring user authentication, account management, and
-transaction processing.
+**Backend Banking Application** | Spring Boot + JWT + Docker
 
-## Features
+A complete banking system with secure authentication, account management, and transaction processing. Demonstrates
+modern Java development practices and production-ready architecture.
 
-### Authentication & Authorization
+## What This Project Shows
 
-- User registration and login
-- JWT-based authentication
-- Role-based access control (Admin/Customer)
+- **Backend Development**: Spring Boot REST API with comprehensive banking operations
+- **Security Implementation**: JWT authentication with role-based access (Admin/Customer)
+- **Database Design**: PostgreSQL with JPA/Hibernate for transaction management
+- **DevOps Skills**: Docker containerization and multi-service orchestration
+- **Clean Architecture**: Layered design with controllers, services, and repositories
 
-### Customer Features
+## Core Features
 
-- View account balance
-- Transfer funds between accounts
-- View transaction history
-- Request chequebook
+**User Management**
 
-### Admin Features
+- Secure registration and login system
+- JWT token-based authentication
+- Admin and Customer role separation
 
-- Create new user accounts
-- View any user's transaction history
-- Check account balances for any user
-- View and approve chequebook requests
+**Banking Operations**
+
+- Account balance checking
+- Fund transfers between accounts
+- Complete transaction history
+- Chequebook request system with admin approval
+
+**Admin Dashboard**
+
+- User account creation and management
+- Transaction monitoring across all accounts
+- Chequebook request approval workflow
 
 ## Technology Stack
 
-- **Framework**: Spring Boot 3.5.5
-- **Language**: Java 21
-- **Database**: PostgreSQL
-- **Security**: Spring Security with JWT
-- **ORM**: Spring Data JPA with Hibernate
-- **Build Tool**: Maven
+- **Java 21** - Latest LTS version
+- **Spring Boot 3.5.5** - Modern framework for rapid development
+- **Spring Security + JWT** - Secure authentication system
+- **PostgreSQL** - Relational database with JPA/Hibernate
+- **Docker** - Containerized deployment
+- **Maven** - Build and dependency management
 
-## Dependencies
+## Quick Start
 
-- Spring Boot Starter Web
-- Spring Boot Starter Data JPA
-- Spring Boot Starter Security
-- PostgreSQL Driver
-- JWT (JSON Web Token) Library
-- Lombok for boilerplate code reduction
+**Option 1: Docker (Recommended)**
 
-## Prerequisites
+```bash
+mvn clean package
+docker-compose up --build
+```
 
-- Java 21 or higher
-- PostgreSQL database
-- Maven
+Access at: `http://localhost:8083`
 
-## Database Configuration
+**Option 2: Local Development**
 
-The application is configured to connect to a PostgreSQL database:
+```bash
+mvn spring-boot:run
+```
 
-- **Host**: localhost
-- **Port**: 5432
-- **Database**: banking-system
-- **Username**: postgres
-
-Update the database credentials in `src/main/resources/application.yaml` as needed.
-
-## Running the Application
-
-1. Ensure PostgreSQL is running and the database `banking-system` exists
-2. Clone the repository
-3. Navigate to the project directory
-4. Run the application:
-   ```bash
-   mvn spring-boot:run
-   ```
-5. The application will start on port 8082
+Requires: Java 21, PostgreSQL on localhost:5432
 
 ## API Endpoints
 
-### Authentication
+**Authentication**
 
-- `POST /auth/signup` - Register a new user
-- `POST /auth/login` - User login
+- `POST /auth/signup` - User registration
+- `POST /auth/login` - User authentication
 
-### Customer Operations
+**Customer Operations**
 
-- `GET /api/customer/balance` - Get account balance
-- `POST /api/customer/transferFunds` - Transfer funds
-- `GET /api/customer/transactionHistory` - Get transaction history
+- `GET /api/customer/balance` - Check account balance
+- `POST /api/customer/transferFunds` - Transfer money
+- `GET /api/customer/transactionHistory` - View transactions
 - `POST /api/customer/chequebook` - Request chequebook
 
-### Admin Operations
+**Admin Operations**
 
-- `POST /api/admin/addAccount` - Create new user account
-- `GET /api/admin/transactionHistory?username={username}` - Get user transaction history
-- `GET /api/admin/checkBalance?username={username}` - Get user account balance
-- `GET /api/admin/pendingRequests` - Get pending chequebook requests
-- `GET /api/admin/approveRequests?username={username}` - Approve chequebook request
+- `POST /api/admin/addAccount` - Create user accounts
+- `GET /api/admin/transactionHistory?username={username}` - View any user's transactions
+- `GET /api/admin/checkBalance?username={username}` - Check any user's balance
+- `GET /api/admin/pendingRequests` - View chequebook requests
+- `GET /api/admin/approveRequests?username={username}` - Approve requests
 
 ## Project Structure
 
@@ -104,7 +95,10 @@ src/main/java/com/banking/app/
 └── service/            # Business logic services
 ```
 
-## Security
+## Architecture Highlights
 
-The application uses JWT tokens for authentication. The JWT secret is configured in the application.yaml file. Make sure
-to use a secure secret key in production environments.
+- **Layered Architecture**: Controllers → Services → Repositories
+- **JWT Security**: Stateless authentication with role-based access
+- **Database Integration**: JPA entities with PostgreSQL
+- **Docker Ready**: Multi-container setup with persistent data
+- **RESTful Design**: Clean API endpoints following REST principles

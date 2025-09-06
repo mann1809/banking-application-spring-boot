@@ -3,7 +3,7 @@ spring:
     name: Banking System - Spring Boot Project
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/banking-system
+    url: jdbc:postgresql://postgres:5432/banking-system
     username: postgres
     password: bebubebu
     driver-class-name: org.postgresql.Driver
