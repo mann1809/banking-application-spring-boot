@@ -5,6 +5,7 @@ import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +15,9 @@ import java.util.Date;
 
 @Component
 public class JwtUtil {
-    private final String SECRET = "zXwRQUMpWezS86T1Nc0tErS4wpgqOoQr4jFSTbtY+8I="; // move to properties, not hardcode
+
+    @Value("${auth.jwt.secret}")
+    private String SECRET;
 
     public String generateToken(UserDetails userDetails) {
         return Jwts.builder()
